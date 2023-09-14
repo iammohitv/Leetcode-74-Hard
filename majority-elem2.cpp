@@ -1,3 +1,4 @@
+//Boyer Moore's algorithm
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {

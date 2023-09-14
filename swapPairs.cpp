@@ -10,17 +10,14 @@
  */
 class Solution {
 public:
-    ListNode* removeElements(ListNode* head, int val) {
-        ListNode* temp = head;
-        if(temp==NULL){
+    ListNode* swapPairs(ListNode* head) {
+        
+        if(head==NULL || head->next==NULL){
             return head;
         }
-        while(temp->next!=NULL){
-            if(temp->next->val==val){
-                temp->next = temp->next->next;
-            }
-            temp=temp->next;
-        }
+        ListNode* temp = head->next;
+        head->next = swapPairs(head->next->next);
+        temp->next = head;
         return head;
     }
-};l;
+};
